@@ -19,6 +19,34 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
+''' 
+Program for linear search method to match the item in a list
+Developed by:S.Dinesh
+RegisterNumber: 212222230033
+'''
+def linearSearch(array,n,k):
+    # write your code for linear search
+    for i in range(0,n):
+        if (array[i] ==k):
+            return i
+    return -1
+ 
+    
+array = eval(input())
+# sort the array
+k = eval(input())
+n=len(array)
+array.sort()# k-item to be seared for
+# get the length of array and store in the variable n
+# use the function for linear search
+# use if-else to print sorted array and "Element not found" if the item is not present in the list otherwise print sorted array and "Element found at index: ", 
+result = linearSearch(array,n,k)
+if(result == -1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 
 
@@ -26,7 +54,39 @@ i)	#Use a linear search method to match the item in a list.
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by:S.Dinesh
+RegisterNumber: 212222230033
+'''
+def binarySearch(array, k, low, high):
+    while low <= high:
+        mid = low +(high - low)//2
+        
+        if arr[mid]== k:
+            return mid
+            
+        elif arr[mid] < k:
+            low = mid + 1
+        else:
+            high = mid - 1
+    
+    return -1
+    
+arr = eval(input())
+arr.sort()
+k = eval(input()) 
+result = binarySearch(arr,k,0,len(arr)-1)
 
+if(result == -1):
+    
+    print(arr)
+    
+    print("Element not found")
+    
+else:
+    print(arr)
+    
+    print("Element found at index: ",result)
 
 
 
@@ -36,10 +96,48 @@ iii)	# Find the element in a list using Binary Search (recursive Method).
 
 
 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by:S.Dinesh
+RegisterNumber: 212222230033
+'''
+def binarySearch(arr, k, low, high):
+    if high >= low:
+        mid = low +(high - low)//2
+        
+        if arr[mid]== k:
+            return mid
+            
+        elif arr[mid] > k:
+            return binarySearch(arr,k,low,mid-1)
+                
+        else:
+            return binarySearch(arr,k,mid  + 1,high)
+    else:
+        return -1
+    
+arr = eval(input())
+arr.sort()
+k = eval(input()) 
+result = binarySearch(arr,k,0,len(arr)-1)
+
+if(result == -1):
+    
+    print(arr)
+    
+    print("Element not found")
+    
+else:
+    print(arr)
+    
+    print("Element found at index: ",result)
 
 
 ```
-## Sample Input and Output
+##  Output
+![Screenshot (65)](https://github.com/Dineshsekhar2004/Search-Algorithm/assets/119405916/4a545393-024f-4834-a4da-f68da1247dec)
+![Screenshot (64)](https://github.com/Dineshsekhar2004/Search-Algorithm/assets/119405916/45ca8daf-cfcc-4211-8af7-7429fdd549c1)
+![Screenshot (63)](https://github.com/Dineshsekhar2004/Search-Algorithm/assets/119405916/896f9b75-43ba-48a0-9a48-c4619c4ac1d3)
+
 
 
 
